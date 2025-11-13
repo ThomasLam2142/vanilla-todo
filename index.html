@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <h1>Todo List</h1>
+    <input id="taskname" type="text"/>
+    <button type="button" id="submit">Submit</button>
+    <ul id="todo-list">
+        <li>Tast1<input type="checkbox"/></li>
+
+    </ul>
+</head>
+
+<body>
+Placeholder body
+</body>
+
+<button id="new list">NEW LIST</button>
+
+
+<script>
+    // function testFunction(){
+    //     console.log("test success")
+    // }
+    // testFunction();
+    const todolist = document.getElementById("todo-list");
+
+    document.getElementById('submit').addEventListener('click',
+        () => {
+            const text = document.getElementById('taskname').value;
+            const li = document.createElement('li');
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+
+            li.textContent = text;
+            li.appendChild(checkbox);
+            todolist.appendChild(li);
+        });
+
+
+</script>
+
+
+</html>

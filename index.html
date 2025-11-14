@@ -1,46 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
-    <h1>Todo List</h1>
-    <input id="taskname" type="text"/>
-    <button type="button" id="submit">Submit</button>
-    <ul id="todo-list">
-        <li>Tast1<input type="checkbox"/></li>
-
-    </ul>
+    
 </head>
 
 <body>
-Placeholder body
+    <div class = "app">
+        <h1>Todo List</h1>
+        <input id="taskname" type="text"/>
+        <button type="button" id="submit">Submit</button>
+        <ul id="todo-list">
+            
+
+        </ul>
+    </div>
 </body>
 
-<button id="new list">NEW LIST</button>
 
 
 <script>
-    // function testFunction(){
-    //     console.log("test success")
-    // }
-    // testFunction();
+
     const todolist = document.getElementById("todo-list");
+    let tasknumber = 1
 
     document.getElementById('submit').addEventListener('click',
         () => {
             const text = document.getElementById('taskname').value;
+
             const li = document.createElement('li');
+            li.id = `task-${tasknumber}`;
+
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
 
-            li.textContent = text;
+            const deletebox = document.createElement('button');
+            deletebox.textContent = "Delete Task"
+            deletebox.className = "deleteBox"
+            deletebox.id = "delete" + tasknumber
+
+            deletebox.addEventListener('click', () => {
+                todolist.removeChild(li);
+            });
+            
+            li.textContent = text + tasknumber;
+            
+
             li.appendChild(checkbox);
+            li.appendChild(deletebox);
             todolist.appendChild(li);
+            
+            tasknumber += 1;
         });
+    
 
 
 </script>
+    
+
+
+<style>
+    body {
+    margin: 0;                /* remove default margin */
+    min-height: 100vh;        /* full viewport height */
+    display: flex;
+    justify-content: center;  /* horizontal center */
+    align-items: center;      /* vertical center */
+    }    
+
+    .app {
+    display: flex;
+    flex-direction: column;   /* stack inside vertically */
+    align-items: center;
+    gap: 0.5rem;
+    }
+</style>
 
 
 </html>

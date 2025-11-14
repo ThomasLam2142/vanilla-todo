@@ -1,0 +1,7 @@
+[
+  { "taskNumber": 1, "dueDate": "2025-11-20", "completed": false },
+  { "taskNumber": 2, "dueDate": "2025-11-25", "completed": true },
+  { "taskNumber": 3, "dueDate": "2025-12-01", "completed": false },
+  { "taskNumber": 4, "dueDate": "2025-12-10", "completed": false },
+  { "taskNumber": 5, "dueDate": "2026-01-05", "completed": true }
+]
